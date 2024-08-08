@@ -8,6 +8,32 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+import "jquery";
+import "popper.js";
+import "bootstrap";
+import "../stylesheets/application";
+// app/javascript/packs/application.js
+import "../stylesheets/application.scss";
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+
+//= require rails-ujs
+//= require turbolinks
+//= require_tree .
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const hamburgerBtn = document.getElementById('navbar-toggler');
+//   const navbarNav = document.getElementById('navbarNav');
+
+//   hamburgerBtn.addEventListener('click', () => {
+//     navbarNav.classList.toggle('show');
+//   });
+// });
+
+
+
+

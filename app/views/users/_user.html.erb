@@ -1,0 +1,27 @@
+<div class="container">
+  <!-- User Info Section -->
+  <div class="user-info">
+    <h2>User info</h2>
+    <div class="user-info-content">
+      <% if @user.profile_image.attached? %>
+        <%= image_tag @user.profile_image.variant(resize_to_fill: [100, 100]), class: "profile-image" %>
+      <% else %>
+        <%= image_tag "no_image.jpg", size: "100x100", class: "profile-image" %>
+      <% end %>
+      <div class="user-details">
+        <div class="detail-item">
+          <strong>name</strong>
+          <span><strong><%= @user.name %></strong></span>
+        </div>
+        <div class="detail-item">
+          <strong>introduction</strong>
+          <span><strong><%= @user.introduction %></strong></span>
+        </div>
+      </div>
+    </div>
+<%= link_to edit_user_path(@user.id), class: "btn btn-user-edit" do %>
+  <i class="fas fa-user-cog"></i> 
+<% end %>
+  </div>
+
+  

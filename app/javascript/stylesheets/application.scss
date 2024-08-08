@@ -1,0 +1,77 @@
+
+@import "bootstrap";
+
+
+
+
+/* 共通スタイル */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* その他スタイル */
+.b {
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+.box2 {
+  width: 600px;
+  height: 90px;
+  margin: 0 auto;
+}
+
+// .clearfix::after {
+//   content: "";
+//   display: block;
+//   clear: both;
+// }
+
+.title {
+  color: #fff;
+  font-size: 20px;
+}
+
+// .body {
+//   margin: 55px 10% 0px 8%;
+// }
+/* body のマージン調整 */
+.body {
+  margin: 55px auto; /* 上下に55px、左右に自動的に中央配置 */
+  width: 90%; /* 幅を90%に設定 */
+  max-width: 1200px; /* 最大幅を1200pxに設定（必要に応じて調整） */
+}
+
+
+.notice {
+  color: green;
+}
+
+.error {
+  color: red;
+}
+
+.error-message {
+  font-size: 12px;
+  list-style: square;
+  margin-left: 60px;
+}
+
+.actions {
+  margin-top: 5px;
+}
+
+/* Detail items */
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0; /* Padding for spacing */
+}
+
+/* Gray separator */
+.separator {
+  border-top: 1px solid #ddd; /* Gray separator line */
+  margin: 10px 0; /* Margin for spacing */
+}

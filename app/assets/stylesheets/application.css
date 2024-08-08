@@ -1,15 +1,128 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
+/*@import "bootstrap";*/
+
+
+
+
+/* 共通スタイル */
+/** {*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  box-sizing: border-box;*/
+/*}*/
+
+/* ハンバーガーメニュー */
+/*.hamburger-menu {*/
+/*  display: none;*/
+/*  position: fixed;*/
+/*  top: 0;*/
+/*  right: 0;*/
+/*  width: 200px;*/
+/*  height: 100%;*/
+/*  background-color: #333;*/
+/*  color: #fff;*/
+/*  transform: translateX(100%);*/
+/*  transition: transform 0.3s ease;*/
+/*  z-index: 1000;*/
+/*}*/
+
+/*.hamburger-menu.open {*/
+/*  transform: translateX(0);*/
+/*}*/
+
+/*.hamburger-menu ul {*/
+/*  list-style: none;*/
+/*  padding: 0;*/
+/*  margin: 0;*/
+/*}*/
+
+/*.hamburger-menu ul li {*/
+/*  padding: 15px;*/
+/*  border-bottom: 1px solid #444;*/
+/*}*/
+
+/*.hamburger-menu ul li a {*/
+/*  color: #fff;*/
+/*  text-decoration: none;*/
+/*}*/
+
+/*.hamburger-menu ul li a:hover {*/
+/*  text-decoration: underline;*/
+/*}*/
+
+/* ハンバーガーアイコン */
+/*.hamburger {*/
+/*  display: inline-block;*/
+/*  cursor: pointer;*/
+/*  padding: 15px;*/
+/*  background-color: #333;*/
+/*  color: #fff;*/
+/*  border: none;*/
+/*  border-radius: 5px;*/
+ /* Ensure button is above menu 
+}
+
+.hamburger .fa {
+  font-size: 24px;
+}
+
+
+
+
+ その他スタイル 
+.b {
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+.box2 {
+  width: 600px;
+  height: 90px;
+  margin: 0 auto;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.title {
+  color: #fff;
+  font-size: 20px;
+}
+
+.body {
+  margin: 55px 10% 0px 8%;
+}
+
+.notice {
+  color: green;
+}
+
+.error {
+  color: red;
+}
+
+.error-message {
+  font-size: 12px;
+  list-style: square;
+  margin-left: 60px;
+}
+
+.actions {
+  margin-top: 5px;
+}
+
+ Detail items 
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0; /* Padding for spacing 
+}
+
+ Gray separator 
+.separator {
+  border-top: 1px solid #ddd; /* Gray separator line 
+  margin: 10px 0; /* Margin for spacing 
+}

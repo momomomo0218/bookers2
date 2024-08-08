@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <!-- User info と New book を含むカラム -->
+    <div class="col-md-3">
+      <%= render 'users/user', user: @user %>
+      <h2>New book</h2>
+      <%= render 'books/book', book: @book %>
+    </div>
+    
+    <!-- Users を表示するカラム -->
+    <div class="col-md-8 offset-md-1">
+      <h2>Users</h2>
+      <table class="table table-sm user-index">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td>
+                <% if user.profile_image.attached? %>
+                  <%= image_tag user.profile_image.variant(resize_to_fill: [50, 50]) %>
+                <% else %>
+                  <%= image_tag "no_image.jpg", size: "50x50" %>
+                <% end %>
+              </td>
+              <td><%= user.name %></td>
+              <td><%= link_to "Show", user_path(user) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
