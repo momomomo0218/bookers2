@@ -33,14 +33,14 @@
       <table class='table table-hover table-inverse'>
         <tr>
           <td>
-            <%= link_to user_path(@book.user_id) do %>
-              <% if @book.user.profile_image.attached? %>
-                <%= image_tag @book.user.profile_image.variant(resize_to_fill: [50, 50]) %>
+            <%= link_to user_path(@user) do %>
+              <% if @user.profile_image.attached? %>
+                <%= image_tag @user.profile_image.variant(resize_to_fill: [50, 50]) %>
               <% else %>
                 <%= image_tag 'no_image.jpg', size: '50x50' %>
               <% end %>
               <nav>
-                <%= @book.user.name %>
+                <%= @user.name %>
               </nav>
             <% end %>
           </td>
@@ -54,6 +54,30 @@
           <% end %>
         </tr>
       </table>
+      
+      <div>
+  <p>コメント件数：<%= @book.post_comments.count %></p>
+ <% @book.post_comments.each do |post_comment| %>
+  <p><%= image_tag post_comment.user.get_profile_image(100, 100) if post_comment.user %></p>
+  <p><%= post_comment.user.name %></p>
+  <% if post_comment.created_at.present? %>
+    <%= post_comment.created_at.strftime('%Y/%m/%d') %><%= post_comment.comment %>
+  <% else %>
+    <p>作成日時不明</p>
+  <% end %>
+  <% if post_comment.user == current_user %>
+      <%= link_to "削除", book_post_comment_path(post_comment.book, post_comment), method: :delete %>
+    <% end %>
+  
+<% end %>
+
+</div>
+<div>
+  <%= form_with model: [@book, @post_comment] do |f| %>
+    <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
+    <%= f.submit "送信する" %>
+  <% end %>
+</div>
     </div>
   </div>
 </div>
